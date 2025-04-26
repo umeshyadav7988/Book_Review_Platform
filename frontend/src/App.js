@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AddBook from "./pages/addBook";
-import ViewBooks from "./pages/viewBooks";
+import AddBook from "./pages/AddBook.jsx";
+import ViewBooks from "./pages/ViewBooks.jsx";
 import BookDetails from "./pages/bookDetails";
 import Register from "./pages/register";
 import Login from "./pages/login";
