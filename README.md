@@ -1,7 +1,6 @@
 # 📖 Book Review Platform
 
-**Book Review Platform** is a full-stack web application that allows users to add books, view detailed listings, and write, edit, or delete reviews. Built with **React** on the frontend and **Node.js** with **Express** on the backend, it uses **MongoDB** to manage data and supports image uploads via **Cloudinary** or **Amazon S3**.
-
+**Book Review Platform** is a full-stack web application that allows users to add books, view detailed listings, and write, edit, or delete reviews. Built with **React** on the frontend and **Node.js** with **Express** on the backend, it uses **MongoDB** to manage data.
 ---
 
 ## ✨ Features
