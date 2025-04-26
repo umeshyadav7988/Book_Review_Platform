@@ -9,7 +9,6 @@ import Header from "./components/header.jsx";
 import ProtectedRoute from "./components/protectedRoute.js";
 import MyReviews from "./pages/myReviews.jsx";
 import UpdateReview from "./pages/updateReview.jsx";
-
 function App() {
   return (
     <Router>
