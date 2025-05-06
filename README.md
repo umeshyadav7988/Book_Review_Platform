@@ -55,7 +55,7 @@
 4. **Create a `.env` file** in the `backend` folder and add the following:
 
    ```env
-   MONGO_URI=<Your MongoDB URI>
+   MONGODB_URI=<Your MongoDB URI>
    JWT_SECRET=<Your JWT Secret>
    ```
 
