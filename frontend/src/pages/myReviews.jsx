@@ -86,8 +86,8 @@ function MyReviews() {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
+      confirmButtonColor: "#000000",
+      cancelButtonColor: "#666666",
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -100,7 +100,6 @@ function MyReviews() {
             throw new Error("Failed to delete review");
           }
           const data = await response.json();
-          console.log("Review deleted:", data);
           setReviews((prevReviews) => prevReviews.filter((review) => review._id !== id));
           Swal.fire({
             title: "Deleted!",
@@ -120,7 +119,7 @@ function MyReviews() {
   if (loading) {
     return (
       <div className='flex items-center justify-center h-screen'>
-        <OrbitProgress variant='dotted' color='#FFA500' size='medium' className='flex-col' />
+        <OrbitProgress variant='dotted' color='#000000' size='medium' className='flex-col' />
       </div>
     );
   }
@@ -128,7 +127,7 @@ function MyReviews() {
   return (
     <div className='p-6 max-w-[1200px] mx-auto'>
       <div className='flex'>
-        <p className='items-center mx-auto mt-16 mb-6 text-4xl font-semibold text-orangeYellow'>My Reviews</p>
+        <p className='items-center mx-auto mt-16 mb-6 text-4xl font-semibold text-black'>My Reviews</p>
       </div>
       <div className='flex mx-auto space-x-6 max-w-[800px] mb-4'>
         <TextField
@@ -141,13 +140,13 @@ function MyReviews() {
           sx={{
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
-                borderColor: "#FFA500",
+                borderColor: "#000000",
               },
               "&:hover fieldset": {
-                borderColor: "#FFA500",
+                borderColor: "#000000",
               },
               "&.Mui-focused fieldset": {
-                borderColor: "#FFA500",
+                borderColor: "#000000",
               },
             },
           }}
@@ -164,13 +163,13 @@ function MyReviews() {
           sx={{
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
-                borderColor: "#FFA500",
+                borderColor: "#000000",
               },
               "&:hover fieldset": {
-                borderColor: "#FFA500",
+                borderColor: "#000000",
               },
               "&.Mui-focused fieldset": {
-                borderColor: "#FFA500",
+                borderColor: "#000000",
               },
             },
           }}
@@ -189,14 +188,14 @@ function MyReviews() {
               }));
             }}
             sx={{
-              color: "#FFA500",
+              color: "#000000",
             }}
           />
           <p className='mx-4'>({filter.rating})</p>
         </div>
         <button
           onClick={() => setFilter({ bookName: "", rating: "", date: "" })}
-          className='px-2 py-2 my-auto text-white bg-orange-500 rounded hover:bg-orange-600 w-[500px]'>
+          className='px-2 py-2 my-auto text-white bg-black rounded hover:bg-gray-800 w-[500px]'>
           Clear Filters
         </button>
       </div>
@@ -206,10 +205,10 @@ function MyReviews() {
         filteredReviews.map((review) => (
           <div
             key={review._id}
-            className='mb-6 transition-all border rounded-lg shadow-lg max-w-[800px] mx-auto shadow-orange hover:shadow-orangeYellow hover:shadow-md'
+            className='mb-6 transition-all border rounded-lg shadow-lg max-w-[800px] mx-auto border-black shadow-black hover:shadow-gray-800 hover:shadow-md'
             title='Click to expand'>
             <div className='flex p-4' onMouseEnter={() => handleToggleExpand(review._id)}>
-              <img alt={review.book.title} src={review.book.coverImage} className='h-24 border rounded max-w-[100px] border-orangeYellow shadow-md' />
+              <img alt={review.book.title} src={review.book.coverImage} className='h-24 border rounded max-w-[100px] border-black shadow-md' />
               <div className='mt-2 ml-10 w-[500px]'>
                 <Typography variant='h5'>{review.book.title}</Typography>
                 <div className='flex'>
@@ -221,14 +220,14 @@ function MyReviews() {
                     value={review.rating}
                     readOnly
                     sx={{
-                      color: "#ffff25",
+                      color: "#000000",
                     }}
                   />
                   <div className='pt-4 my-auto ml-4'>({review.rating})</div>
                 </div>
               </div>
               <div className='flex my-auto '>
-                <EditIcon className='my-auto text-orangeYellow' onClick={() => navigate(`/updateReview/${review._id}`)} titleAccess='Edit Review' />
+                <EditIcon className='my-auto text-black' onClick={() => navigate(`/updateReview/${review._id}`)} titleAccess='Edit Review' />
                 <DeleteForeverIcon className='my-auto ml-6 text-red-500' onClick={() => handleDeleteReview(review._id)} titleAccess='Delete Review' />
               </div>
             </div>

@@ -19,7 +19,6 @@ function BookDetails() {
 
   const storedUserName = localStorage.getItem("userName");
 
-  // Fetch the book details
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
@@ -76,7 +75,7 @@ function BookDetails() {
         text: "If you publish this review as anonymous, you won't be able to update or delete it later.",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#FFA500",
+        confirmButtonColor: "#000000",
         cancelButtonColor: "#3085d6",
         confirmButtonText: "Yes, make it anonymous",
       }).then((result) => {
@@ -103,7 +102,7 @@ function BookDetails() {
         },
         body: JSON.stringify({
           bookId: id,
-          userName: userName, 
+          userName: userName,
           reviewText: review,
           rating: rating,
         }),
@@ -147,17 +146,17 @@ function BookDetails() {
   if (loading) {
     return (
       <div className='flex items-center justify-center h-screen'>
-        <OrbitProgress variant='dotted' color='#FFA500' size='medium' className='flex-col' />
+        <OrbitProgress variant='dotted' color='#000000' size='medium' className='flex-col' />
       </div>
     );
   }
 
   return (
     <div className=' max-w-[1200px] mx-auto my-20 '>
-      <h1 className='text-4xl font-bold text-center text-orangeYellow'>Book Details</h1>
+      <h1 className='text-4xl font-bold text-center text-black'>Book Details</h1>
 
       <div className='flex mx-20 mt-10'>
-        <img src={book.coverImage} alt={book.title} className='border rounded-lg max-h-80 border-orangeYellow' />
+        <img src={book.coverImage} alt={book.title} className='border rounded-lg max-h-80 border-black' />
         <div className='flex-col mt-[-15px] ml-10'>
           <h1 className='mt-2 text-3xl font-semibold'>{book.title}</h1>
           <h1 className='mt-4 text-xl'>by {book.author}</h1>
@@ -169,7 +168,7 @@ function BookDetails() {
               readOnly
               precision={0.1}
               sx={{
-                color: "#ffff25",
+                color: "#000000",
               }}
             />
             <h1 className='ml-4 mt-[-1px]'>{book.rating.toFixed(1)}</h1>
@@ -182,8 +181,8 @@ function BookDetails() {
       <Divider sx={{ my: 2 }} />
 
       <div component='form ' className='mx-20 ' onSubmit={handleReviewSubmit}>
-        <h1 className='my-6 text-2xl text-orangeYellow' onMouseEnter={handleToggleForm}>
-          Leave a Review <NavigateNextIcon className='ml-10 scale-150 text-orangeYellow' />
+        <h1 className='my-6 text-2xl text-black' onMouseEnter={handleToggleForm}>
+          Leave a Review <NavigateNextIcon className='ml-10 scale-150 text-black' />
         </h1>
         <div
           className={`mt-4 pt-2 transition-all duration-500 ease-in-out ${
@@ -192,7 +191,7 @@ function BookDetails() {
           <div className='flex'>
             <TextField
               label='Your Name'
-              className='flex w-[300px] border-orangeYellow'
+              className='flex w-[300px] border-black'
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               InputProps={{
@@ -201,13 +200,13 @@ function BookDetails() {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#FFA500", 
+                    borderColor: "#000000",
                   },
                   "&:hover fieldset": {
-                    borderColor: "#FFA500", 
+                    borderColor: "#000000",
                   },
                   "&.Mui-focused fieldset": {
-                    borderColor: "#FFA500", 
+                    borderColor: "#000000",
                   },
                 },
               }}
@@ -232,13 +231,13 @@ function BookDetails() {
               marginTop: "10px",
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
                 "&:hover fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
               },
             }}
@@ -249,18 +248,18 @@ function BookDetails() {
               value={rating}
               onChange={(e, newValue) => setRating(newValue)}
               sx={{
-                color: "#ffff25",
+                color: "#000000",
               }}
             />
           </div>
-          <button className='p-2 mt-2 text-[white] rounded-md bg-orangeYellow font-semibold' type='submit' onClick={handleReviewSubmit}>
+          <button className='p-2 mt-2 text-white rounded-md bg-black font-semibold' type='submit' onClick={handleReviewSubmit}>
             Submit Review
           </button>
         </div>
       </div>
       <Divider sx={{ my: 2 }} />
 
-      <h1 className='mx-20 mt-6 text-2xl text-orangeYellow'>Reviews</h1>
+      <h1 className='mx-20 mt-6 text-2xl text-black'>Reviews</h1>
       {reviews.length === 0 ? (
         <div className='mt-4 mb-10 mx-52'>
           <Typography className='mx-auto' variant='body1'>
@@ -269,7 +268,7 @@ function BookDetails() {
         </div>
       ) : (
         reviews.map((review) => (
-          <div className='mt-4 mx-20 border rounded-md max-w-[800px] p-4 shadow-lg border-orangeYellow ' key={review._id} sx={{ my: 2 }}>
+          <div className='mt-4 mx-20 border rounded-md max-w-[800px] p-4 shadow-lg border-black ' key={review._id} sx={{ my: 2 }}>
             <div className='flex'>
               <h1 className='ml-2'>
                 <strong>{review.userName}</strong>
@@ -279,7 +278,7 @@ function BookDetails() {
                 readOnly
                 className='ml-36'
                 sx={{
-                  color: "#ffff25",
+                  color: "#000000",
                 }}
               />
               <p className='ml-4'>({review.rating})</p>

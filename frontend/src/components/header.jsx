@@ -29,11 +29,11 @@ function Header() {
     <header className='fixed top-0 left-0 right-0 z-50 p-4 bg-white shadow-lg backdrop-blur-lg bg-opacity-35'>
       <div className='flex items-center justify-between'>
         <div className='text-xl'>
-          <Link to='/' className='font-bold text-[#FFA500]'>
-            Book Reviewer
+          <Link to='/' className='font-bold text-[#000000]'>
+            Book Review Platform
           </Link>
         </div>
-        <div className='flex items-center text-[#FFA500]'>
+        <div className='flex items-center text-[#000000]'>
           {isLoggedIn ? (
             <div className='flex items-center'>
               <Link to='/' className='mr-10 hover:text-gray-60 hover:text-gray-600'>

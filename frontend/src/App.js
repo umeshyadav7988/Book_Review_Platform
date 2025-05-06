@@ -14,10 +14,10 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        {/* Public Routes */}
+        
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        {/* Protected Routes */}
+
         <Route path='/addBook' element={<ProtectedRoute element={<AddBook />} />} />
         <Route path='/' element={<ProtectedRoute element={<ViewBooks />} />} />
         <Route path='/book/:id' element={<ProtectedRoute element={<BookDetails />} />} />

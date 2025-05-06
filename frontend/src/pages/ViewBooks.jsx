@@ -49,7 +49,8 @@ function ViewBooks() {
 
   return (
     <div className='p-4 max-w-[1200px] mx-auto mt-12'>
-      <h1 className='mx-auto mb-6 text-4xl font-semibold text-center text-orangeYellow'>All Books</h1>
+      <h1 className='mx-auto mb-6 text-4xl font-semibold text-center text-black'
+      >All Books</h1>
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {books.map((book) => (
           <div

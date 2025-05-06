@@ -107,7 +107,8 @@ function AddBook() {
   return (
     <div className='flex items-center justify-center my-20  max-w-[1200px] mx-auto px-20'>
       <div className='px-20 '>
-        <h2 className='mb-6 text-4xl font-bold text-center text-orange-500'>Add a New Book</h2>
+        <h2 className='mb-6 text-4xl font-bold text-center text-black'
+        >Add a New Book</h2>
 
         <form onSubmit={handleSubmit} className='space-y-4'>
           <div className='flex'>

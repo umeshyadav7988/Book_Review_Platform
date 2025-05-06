@@ -89,10 +89,10 @@ function UpdateReview() {
     <div className='mx-20'>
       <form onSubmit={handleReviewSubmit}>
         <h1 className='mt-20 text-2xl'>Update Your Review</h1>
-        <div className='my-10 '>
+        <div className='my-10'>
           <TextField
             label='Your Name'
-            className=' w-[300px] border-orangeYellow'
+            className='w-[300px]'
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             InputProps={{
@@ -101,13 +101,13 @@ function UpdateReview() {
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
                 "&:hover fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
               },
             }}
@@ -116,7 +116,7 @@ function UpdateReview() {
         <div className='flex-col'>
           <TextField
             label='Your Review'
-            className=' mt-10 w-[800px]'
+            className='mt-10 w-[800px]'
             multiline
             rows={4}
             value={review}
@@ -124,29 +124,28 @@ function UpdateReview() {
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
                 "&:hover fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFA500",
+                  borderColor: "#000000",
                 },
               },
             }}
           />
           <div className='my-4'>
             <Rating
-              className=''
               value={rating}
               onChange={(e, newValue) => setRating(newValue)}
               sx={{
-                color: "#ffff25",
+                color: "#000000",
               }}
             />
           </div>
 
-          <button className='p-2 mt-2 text-[white] rounded-md bg-orangeYellow font-semibold' type='submit'>
+          <button className='p-2 mt-2 text-white rounded-md bg-black font-semibold' type='submit'>
             Update Review
           </button>
         </div>
