@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { TextField } from "@mui/material";
 import Swal from "sweetalert2";
-
 function AddBook() {
   const [showCoverImage, setShowCoverImage] = useState(false);
   const [coverImage, setCoverImage] = useState("");
