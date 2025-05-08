@@ -46,7 +46,6 @@ function ViewBooks() {
       </div>
     );
   }
-
   return (
     <div className='p-4 max-w-[1200px] mx-auto mt-12'>
       <h1 className='mx-auto mb-6 text-4xl font-semibold text-center text-black'
